@@ -12,7 +12,8 @@ exports.getAllUsers = (req, res) => {
 };
 
 exports.getUserById = (req, res) => {
-  const user = users.find((u) => u.id === parseInt(req.params.id));
+    const {id} = req.params;
+  const user = users.find((u) => u.id === id);
   if (!user) return res.status(404).json({ message: "User not found" });
   res.json(user);
 };

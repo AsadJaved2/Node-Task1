@@ -31,7 +31,8 @@ exports.getAllBlogs = (req, res) => {
 };
 
 exports.getBlogById = (req, res) => {
-  const blog = blogs.find((b) => b.id === parseInt(req.params.id));
+    const {id} = req.params;
+  const blog = blogs.find((b) => b.id === id);
   if (!blog) return res.status(404).json({ message: "Blog not found" });
   res.json(blog);
 };
