@@ -8,7 +8,7 @@ exports.createUser = (req, res) => {
   } else res.status(404).json({ message: "Any Field of user is missing" });
 };
 exports.getAllUsers = (req, res) => {
-  res.json(users);
+  res.status(201).json(users);
 };
 
 exports.getUserById = (req, res) => {
@@ -41,3 +41,4 @@ exports.deleteUser = (req, res) => {
     res.status(404).json({ message: "User not found" });
   }
 };
+
